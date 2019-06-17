@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--utf-8能解译绝大多数编码问题，解决中文乱码-->
+    <meta charset="UTF-8">
+    <!-- 移动端和PC端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 兼容性IE被舍弃 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Helo world</title>
+</head>
+<!-- css内联 -->
+<style>
+    /* 权重值  标签->类-> */
+    /*标签选择器  li */
+    li {
+        list-style: none;
+        /* 颜色的三种表达 */
+        color: red;
+        /* color:rgb(red, green, blue);
+       color:rgba(red, green, blue, alpha); */
+    }
+
+    /* 类选择器 */
+    .ul1 {
+        margin: 0;
+        padding: 0;
+        border: 1px solid #cccccc;
+    }
+
+    /* 组合选择器，中间用空格隔开（可以写多个但有限制数量），表在ul1下的li1的样式 */
+    .ul1 .li1 {
+        font-size: 56px;
+    }
+
+    /* ID选择器，但是在当前页面内一个ID名只能出现一次（可以通过编译但是并不好），不能重名（ID选择器预留给js） */
+    #li2 {
+        font-size: 62px;
+
+    }
+</style>
+
+<body>
+    <!-- 无序列表 -->
+    <ul class="ul1">
+        <li class="li1">1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+    </ul>
+    <ul>
+        <li class="li1">a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <!--有序列表
+     <ol>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ol>        -->
+    <div></div>
+    <img src="" alt="图片丢失">
+    <a href="https://www.baidu.com">baidu</a>
+</body>
+
+</html>

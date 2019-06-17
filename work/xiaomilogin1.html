@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* css reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        } 
+        .header {
+            height: 98px;
+        }
+
+        .header-panel {
+            width: 1130px;
+            height: 98px;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            width: 200px;
+            height: 98px;
+            background: url("https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png") no-repeat;
+            /* background-repeat: no-repeat; */
+        }
+
+        /* header end */
+        .content {
+            position: relative;
+        }
+
+        .content-bg {
+            height: 588px;
+            background: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f838fdcd77715410b441f2f56d8f10cd.jpg");
+            background-position: center;
+
+        }
+
+        .login-panel {
+            width: 1130px;
+            height: 588px;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            /* margin: 0 auto;  不能实现居中 */
+            margin-left: -565px;
+        }
+        .login-form{
+            width: 345px;
+            height:410px;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            top: 40px;
+        }
+        .lf-header{
+            text-align: center;
+            padding: 20px 0;
+        }
+        .lf-header a{
+            text-decoration: none;
+            color: #666;
+            font-size: 24px;
+        }
+        .lf-header .active{
+            color: #f56600;
+        }
+        .lf-header .line{
+            border:1px solid #e0e0e0;
+            margin: 0 35px 0 42px;
+           
+        }
+        .login-area{
+            width: 348px;
+            margin: 0 auto;
+        }
+        .inp-bar input{
+            width: 306px;
+            padding: 13px 16px 13px 14px;
+            font-size: 14px;
+            margin-bottom: 14px;
+            border-color:1px solid #efefef;
+        }
+        .login-area button{
+            font-size: 14px;
+            width: 340px;
+            height: 50px;
+            background-color: #ff6700;
+            border:0;
+        }
+        .text-info a,.text-info span{
+            font-size: 14px;
+            color: #757575;
+        }
+        .text-info .left{
+            float: left;
+        }
+        .text-info .right{
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-panel">
+            <div class="header-img"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-bg"></div>
+        <div class="login-panel">
+            <div class="login-form">
+                <div class="lf-header">
+                    <a class="active" href="javascript:void(0);">账号登录</a>
+                    <span class="line"></span>
+                    <a href="javascript:void(0);">扫描登录</a>
+                </div>
+                <div class="lf-content">
+                   <div class="login-area">
+                       <div class="inp-bar">
+                           <input type="text" placeholder="邮箱/手机号码/小米ID">
+                           <input type="password" placeholder="密码">
+                       </div>
+                      <button>登录</button>
+                      <div class="text-info">
+                          <div class="left">
+                                <a style="color: #f56600;" href="javascript:void(0);">手机短信登录/注册</a>
+                          </div>
+                          <div class="right">
+                                <a href="javascript:void(0);">立即注册</a>
+                                <span>|</span>  
+                                <a href="javascript:void(0);">忘记密码？</a>
+                          </div>
+                      </div>
+                   </div> 
+                </div>
+                <div class="lf-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

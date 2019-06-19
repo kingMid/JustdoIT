@@ -11,6 +11,9 @@
             margin: 0;
             padding: 0;
         }
+        fieldset{
+            border: 0;
+        }
         .h_panel {
             width: 1130px;
             margin: 0 auto;
@@ -121,6 +124,70 @@
         .other-panel-text{
             float:right;
         }
+        .lf-footer{
+            width: 348px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -174px;
+        }
+        .login-type{
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #bbb;
+        }
+        /* 兼顾不同浏览器的兼容性 */
+        .login-type legend{
+            margin: 0 auto;
+        }
+        .logo-icon{
+            text-align: center;
+    
+        }
+        .logo-icon a{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius:50%;
+            margin:20px 20px ;
+            }
+        .logo-icon i{   
+            display: block;
+            background: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png") no-repeat;
+        } 
+        .logo-icon .qq{
+            background-color: #0288d1;
+        }
+        .logo-icon .qq i,.logo-icon .sina i {
+            width: 18px;
+            height: 18px;
+            margin: 4px auto 0;
+            background-position: -19px 0;
+        }
+        .logo-icon .sina{
+            background-color: #d32f2f;
+        }
+        .logo-icon .sina i{
+            background-position: -38px 0;
+        }
+        .logo-icon .alipay{
+            background-color: #0ae;
+        }
+        .logo-icon .alipay i{
+            background-position: -57px 0;
+            width: 25px;
+            height: 18px;
+            margin-top: 6px;
+            margin-left: 4px;
+        }
+        .logo-icon .weichat{
+            background-color: #00d20d;
+        }
+        .logo-icon .weichat i{
+            background-position: -83px 0;
+            width: 24px;height: 18px;
+            margin: 4px auto 0;
+        }
         .foot{
             width: 100%;
             height: 80px;
@@ -182,6 +249,25 @@
                             </div>
                         </div>
                         
+                    </div>
+                </div>
+                <div class="lf-footer">
+                    <fieldset class="login-type">
+                        <legend>其他登录方式</legend>
+                    </fieldset>
+                    <div class="logo-icon">
+                        <a class="qq" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="sina" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="alipay" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="weichat" href="javascript:void(0);">
+                            <i></i>
+                        </a>
                     </div>
                 </div>
             </div>

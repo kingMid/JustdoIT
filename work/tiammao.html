@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天猫</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        ul {
+            text-decoration: none;
+        }
+        .header{
+            height: 112px;
+        }
+        .site-nav {
+            height: 27px;
+            background-color: #f2f2f2;
+        }
+
+        .site-content {
+            margin: 0 auto;
+            width: 990px;
+            height: 26px;
+        }
+
+        .site-left {
+            width: 282px;
+            height: 26px;
+            float: left;
+        }
+
+        .site-left ul,
+        .site-left a,
+        .site-right ul,
+        .site-right a {
+            color: #999;
+            font-size: 12px;
+            line-height: 26px;
+            text-decoration: none;
+        }
+
+        .site-left li {
+            display: inline;
+            color: #999;
+            padding-right: 12px;
+        }
+
+        .site-right {
+            width: 412px;
+            height: 26px;
+            float: right;
+        }
+
+        .site-right li {
+            display: inline;
+            color: #999;
+            padding-left: 12px;
+        }
+
+        .site-right ul {
+            float: right;
+        }
+
+        .site-right .line {
+            margin-right: -9px;
+            margin-left: -9px;
+        }
+
+        a:hover {
+            color: #e66b19
+        }
+        .headerCon{
+            width: 990px;
+            height: 92px;
+            margin: 0 auto;
+        }
+
+        .malllogo{
+            width: 400px;
+            height: 92px;
+            float: left;
+            padding-top: 30px;
+        }
+        .malllogo .img{
+            width: inherit;
+            height: inherit;
+            background: url("https://img.alicdn.com/tfs/TB11ojWRXXXXXafaFXXXXXXXXXX-190-27.png") no-repeat;
+        }
+        .header-extra{
+            width: 590px;
+            height: 60px;
+            float:right;
+        }
+        .mallSearch{
+            width: 540px;
+            height: 35px;
+            padding-top: 25px;
+        }
+        .input-area{
+            width: 537px;
+            height: 30px;
+            border: solid #ff0036;
+            border-width: 3px 1px 3px 2px;
+        }
+        .input-area .input{
+            width: 440px;
+            height: 20px;
+            font-size: 12px;
+            border: 0;
+            padding:5px 3px 5px 5px;
+            outline: none; 
+        }
+        .input-area button{
+            width: 88px;
+            height: 30px;
+            background-color: #FF0036;
+            border: 0;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header star -->
+    <div class="header">
+        <!-- site star -->
+        <div class="site-nav">
+            <div class="site-content">
+                <div class="site-left">
+                    <ul>
+                        <li><a href="https://www.tmall.com">天猫首页</a></li>
+                        <li>喵，欢迎来天猫</li>
+                        <li><a href="#">请登录</a></li>
+                        <li><a href="#">免费注册</a></li>
+                    </ul>
+                </div>
+                <div class="site-right">
+                    <ul>
+                        <li><a href="#">我的淘宝</a></li>
+                        <li><a href="#">购物车</a></li>
+                        <li><a href="#">收藏夹</a></li>
+                        <li><span class="line">|</span></li>
+                        <li><a href="#">淘宝网</a></li>
+                        <li><a href="#">商家支持</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- site end -->
+        <div class="headerCon">
+            <div class="malllogo">
+                <div class="img"></div>
+            </div>
+            <div class="header-extra">
+                <div class="mallSearch">
+                    <div class="input-area">
+                        <input class="input" type="text" placeholder="搜索 天猫 商品/品牌/店铺">
+                        <button>搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+</body>
+
+</html>

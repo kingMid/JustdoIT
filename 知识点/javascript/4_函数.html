@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //---------------------------函数定义和函数类型-----------------------------
+
+
+    //-------无参函数-----------------
+     var say = function(){//函数定义方法1
+        console.log("This my frist fun!");
+     }
+
+     function say(){//函数定义方法2
+        console.log("This my frist function!");
+     }
+
+
+    //--------形参函数--------------
+     var add = function(a,b){//带参函数方法1 a b为形参
+         return a+b;//返回值
+     }
+     var c=add(8,9);
+     console.log(c);//用c 用来接收返回值
+     console.log(add(6,8));//直接接收返回值
+     
+     function add1(e,f){//带参函数方法2 e f为形参
+         return e+f;
+     }
+     console.log(add(6,8));
+
+     //---------------------- 函数提升 ------------------------------
+    
+     console.log(f1);//f1 为undefined
+
+     say1();//函数提升 
+     var f1 =function(){// var提升将f1变量提升而非函数提升
+         console.log("ok,you are good boy");
+     }
+     function say1(){//function 会将say函数提升
+        console.log("ok,you are nice!");
+     }
+     f1();
+    
+    
+    </script>
+</body>
+</html>

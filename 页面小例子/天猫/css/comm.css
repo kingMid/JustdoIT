@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+button{
+    outline: none;
+    border: 0;
+}
+
+.site-content {
+    margin: 0 auto;
+    width: 1230px;
+    height: 32px;
+}
+
+.arrow{
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border:3px solid transparent;
+    border-top:3px solid #bbb;
+    position: absolute;
+    right:-9px;
+    top:15px;
+}
+.wrapper{
+    width: 1230px;
+    margin:0 auto;
+    /* background: #0000ff;
+    height: 32px; */
+}

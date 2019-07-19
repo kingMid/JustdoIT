@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        fieldset{
+            border: 0;
+        }
+        .h_panel {
+            width: 1130px;
+            margin: 0 auto;
+        }
+ 
+        .h_logo {
+            width: 200px;
+            height: 98px;
+            background: url(https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png) no-repeat;
+        }
+        /* head end */
+        .banner_panel {
+            width: 100%;
+            height: 588px;
+            position: relative;
+            background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f838fdcd77715410b441f2f56d8f10cd.jpg");
+            background-position: center;
+        }
+
+        .layout_panel {
+            width: 1130px;
+            margin: 0 auto;
+            padding-top: 45px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        .layout {
+            width: 410px;
+            height: 543px;
+            background-color: #fff;
+            position: relative;
+            margin-right: 0;
+            margin-left: auto;
+            margin-top: 0;
+        }
+
+        .tap-nav {
+            width: 410px;
+            height: 32px;
+            padding-top: 27px;
+            padding-bottom: 24px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .navtab-link {
+            width: 96px;
+            height: 26px;
+            text-decoration: none;
+            color: #666;
+        }
+    
+        .line {
+            width: 1px;
+            height: 24px;
+            margin: 0 35px 0 42px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .tab-con {
+            width: 410px;
+            height: 256px;
+        }
+
+        .logo-box {
+            width: 348px;
+            height: 256px;
+            margin: auto;
+        }
+
+        .tap-input {
+            width: 348px;
+            height: 124px;
+        }
+
+        .tap-submit {
+            width: 348px;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+        .item_account {
+            width: 346px;
+            height: 48px;
+            margin-top: 9px;
+        }
+
+        .login-button {
+            background-color: #ff6700;
+            width: 348px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            border:0;
+        }
+
+        .other-panel {
+            width: 348px;
+            height: 49px;
+            margin-top: 9px;
+        }
+
+        .other-panel a,.other-panel span{
+            font-size: 14px;
+            color: #9999;
+        }
+        .other-panel-text{
+            float:right;
+        }
+        .lf-footer{
+            width: 348px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -174px;
+        }
+        .login-type{
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #bbb;
+        }
+        /* 兼顾不同浏览器的兼容性 */
+        .login-type legend{
+            margin: 0 auto;
+        }
+        .logo-icon{
+            text-align: center;
+    
+        }
+        .logo-icon a{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius:50%;
+            margin:20px 20px ;
+            }
+        .logo-icon i{   
+            display: block;
+            background: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png") no-repeat;
+        } 
+        .logo-icon .qq{
+            background-color: #0288d1;
+        }
+        .logo-icon .qq i,.logo-icon .sina i {
+            width: 18px;
+            height: 18px;
+            margin: 4px auto 0;
+            background-position: -19px 0;
+        }
+        .logo-icon .sina{
+            background-color: #d32f2f;
+        }
+        .logo-icon .sina i{
+            background-position: -38px 0;
+        }
+        .logo-icon .alipay{
+            background-color: #0ae;
+        }
+        .logo-icon .alipay i{
+            background-position: -57px 0;
+            width: 25px;
+            height: 18px;
+            margin-top: 6px;
+            margin-left: 4px;
+        }
+        .logo-icon .weichat{
+            background-color: #00d20d;
+        }
+        .logo-icon .weichat i{
+            background-position: -83px 0;
+            width: 24px;height: 18px;
+            margin: 4px auto 0;
+        }
+        .foot{
+            width: 100%;
+            height: 80px;
+            padding-top:100px;
+        }
+        li{
+            display:inline;
+            font-size: 14px;
+            padding:0 10px;
+            color: #333;
+        }
+        .ul{
+            text-align: center;
+            margin: 0;
+            height: 20px;
+        }
+        .foot-text{
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            padding: 10px 0;
+            color: #333;
+        }
+        a:hover{color:#ff6700}
+       
+    </style>
+</head>
+
+
+<body>
+    <div class="h_panel">
+        <div class="h_logo"></div>
+    </div>
+    <div class="banner_panel">
+        <div class="layout_panel">
+            <div class="layout">
+                <div class="tap-nav">
+                    <a class="navtab-link" href="javascript:void(0);" style="color: #ff6700">帐号登录</a>
+                    <span class="line"></span>
+                    <a class="navtab-link" href="javascript:void(0);">扫码登录</a>
+                </div>
+                <div class="tab-con">
+                    <div class="logo-box">
+                        <div class="tap-input">
+                            <input class="item_account" type="text" name="user" id="username"
+                                placeholder="邮箱/手机号码/小米ID">
+                            <input class="item_account" type="password" placeholder="密码" autocomplete="off" id="pwd"
+                                name="password">
+                        </div>
+                        <div class="tap-submit">
+                            <input class="login-button" type="submit" value="登录">
+                        </div>
+                        <div class="other-panel">
+                            <span style="color: #ff6700">手机短息登录/注册</span>
+                            <div class="other-panel-text">
+                                <a>立即注册</a>
+                                <span>|</span>
+                                <a>忘记密码?</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="lf-footer">
+                    <fieldset class="login-type">
+                        <legend>其他登录方式</legend>
+                    </fieldset>
+                    <div class="logo-icon">
+                        <a class="qq" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="sina" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="alipay" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                        <a class="weichat" href="javascript:void(0);">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <ul class="ul">
+            <li>简体</li>|
+            <li>繁体</li>|
+            <li>English</li>|
+            <li>常见问题</li>|
+            <li>隐私政策</li>
+        </ul>
+        <div class="foot-text">小米公司版权所有--京ICP备10046444--京公网安备11010802020134号-京ICP证110507号</div>
+    </div>       
+</body>
+
+</html>

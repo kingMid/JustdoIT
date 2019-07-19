@@ -1,0 +1,401 @@
+.site-nav {
+    height: 33px;
+    background-color: #a9180a;
+}
+
+.site-left {
+    width: 282px;
+    height: 32px;
+    float: left;
+}
+
+.site-left ul,
+.site-left a,
+.site-right ul,
+.site-right a {
+    color: #fff;
+    font-size: 12px;
+    line-height: 33px;
+    text-decoration: none;
+}
+
+.site-left li {
+    display: inline;
+    color: #fff;
+    margin:0 12px;
+}
+
+.site-right {
+    
+    height: 26px;
+    float: right;
+}
+
+.site-right  li {
+    display: inline-block;
+    color: #999;
+    padding-left: 12px;
+}
+
+.site-right ul {
+    float: right;
+}
+
+.site-right .line {
+    margin-right: -9px;
+    margin-left: -9px;
+}
+.list-arrow{
+    position: relative;
+}
+
+.list-tb{
+    line-height: 20px;
+    position: absolute;
+    left: 0;
+    top: 31px;
+    background-color: red;
+    border:1px solid #ccc;
+    border-top:none;
+    display: none;
+}
+s.list-arrow:hover .list-tb{
+    display: block;
+}
+.list-tb1{
+    width: 92px;
+    line-height: 20px;
+}
+
+.wrappercent a:hover{
+    color: #e66b19;
+}
+
+.header {
+    height: 130px;
+}
+
+.header-content {
+    width: 1230px;
+    height: 130px;
+    margin: 0 auto;
+   
+}
+.header-img{
+    width: 240px;
+    height: 130px;
+    float: left;    
+}
+.header-img .logo-img{
+  margin: 1px auto;
+  width:240px;
+  height:130px;
+}
+.header-input {
+    width: 625px;
+    height: 68px;
+    float: right;
+    text-decoration: none;
+    padding-top: 38px;
+    overflow: hidden;
+}
+.text-input{
+    width: 625px;
+    height: 36px;
+    border-width: 2px 0 2px 2px;
+    border: solid  #a9180a;
+}
+.text-input .input{
+    width: 491px;
+    height: 23px;
+    padding: 5px;
+    outline: none;
+    float: left;
+}
+.sou-bon{
+    width: 120px;
+    height: 36px;
+    background-color: #a9180a;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #fff;
+}
+.header-banner {
+    width: 190px;
+    height: 98px;
+    float: right;
+    margin-top: 10px;
+    padding-left: 100px;
+}
+.header-banne .bar{
+    width: 190px;
+    height: 98px;
+  
+}
+.ul li{
+    position: relative;
+}
+.ul li{
+    float: left;
+    list-style-type:none;
+    padding:0 24px 0 0;
+    margin-top:5px;
+}
+.ul a{
+    text-decoration: none;
+    color:#999;
+    font-size: 14px;
+}
+.ul li::after{
+    content: '';
+    width: 1px;
+    height: 15px;
+    background:#999;
+    position: absolute;
+    left: -13px;
+    top:4px;
+    
+}
+.ul li.list-hot a{
+    color:#ff0036;
+    font-weight: 550;
+}
+.inner-con0{
+    height: 35px;
+}
+.inner-con1{
+    width: 1030px;
+    height: 35px;  
+    padding-left:200px; 
+    margin: 0 auto;
+}
+.inner-con2{
+    height: 35px;
+    margin:0 auto;
+}
+.inner-con2 li{
+    float: left;
+    list-style-type:none;
+    height: 35px;
+
+}
+.inner-con2 li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 29px;
+    padding: 0 8px;
+
+}
+.logo{
+    width: 100px;
+    height: 30px;
+}
+/*  ctrl c v  轮播图*/
+.slide-box{
+    height: 500px;
+    background: #ccc;
+}
+.slide-box .wrapper{
+    height: 500px;
+    background: #0000ff;
+    position: relative;
+}
+.menu-box{
+    position: absolute;
+    top:-35px;
+    left:0px;
+    /* background: #00ff00; */
+    background: rgba(0,0,0,0.55);
+    width: 200px;
+    height: 535px;
+}
+.img-box{
+    height: 500px;
+    overflow: hidden;
+}
+.img-box img{
+    width: 1230px;
+}
+.menu-title{
+    color:#fff;
+    height: 35px;
+    line-height: 35px;
+    background: #ff0036;
+    font-size:16px;
+    font-weight: 700;
+}
+.menu-title .icon-caidan{
+    margin:0 8px 0 14px;
+    font-size:18px;
+}
+.slide-box{
+    border-top:2px solid #ff0036;
+}
+.main-list{
+    height: 31.2px;
+    line-height: 31.2px;
+}
+.main-list > a{
+    color:#fff;
+    font-size: 14px;
+}
+.main-list .icon-gouwucheman{
+    font-size: 12px;
+}
+.list-icon{
+    margin:0 4px 0 14px;
+    opacity:0.5;
+}
+.main-list:hover{
+    background: #fff;
+}
+.main-list .list-line,.main-list .list-icon,.main-list > a
+{
+    color:#fff;
+}
+.main-list:hover .list-line,.main-list:hover .list-icon,.main-list:hover > a
+{
+    color:#e54077;
+}
+.main-list:hover .list-icon{
+    opacity:1;
+}
+
+.menu-sub-list{
+    width: 850px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    left:200px;
+    top:0px;
+    display: none;
+}
+ .main-list:hover .menu-sub-list{
+    display: block;
+} 
+
+.main-list-box{
+    position: relative;
+}
+.menu-box-left{
+    width: 583px;
+    margin: 19px 28px;
+    float: left;
+}
+.menu-box-left ul{
+    border-bottom: 1px dashed #eee;
+}
+.unpopular{
+    width: 583px;
+    overflow: hidden;
+}
+.unpopular .menu-left{
+    float: left;
+    width: 80px;
+    height: 43px;
+}
+.unpopular .menu-right{
+    width: 493px;
+    float: left;
+}
+.unpopular .menu-right li{
+    display: inline-block;
+    
+}
+.unpopular .menu-right li a{
+    width: 56px;
+    height: 22px;
+    font-size: 14px;
+    margin-left: 13px;
+}
+.menu-box-right{
+    background-color: #FAFAFA;
+    width: 190px;
+    height: 480px;
+    padding: 10px;
+    float:right;
+
+}
+
+.menu-box-logo{
+    display: inline-block;
+}
+.menu-box-logo li{
+    width: 73px;
+    height: 37px;
+    padding:5px 10px;
+    float: left;
+    margin: 0 1px 1px 0;
+    background-color: #fff;
+}
+.menu-box-logo img{
+    width: 73px;
+}
+.menu-img-d img{
+    width: 187px;
+    height: 87px;
+    margin: 10px auto;
+    
+}
+/* 品牌开始 */
+.brand{
+    overflow: hidden;
+    margin-top: 24px;
+}
+.brand-li{
+    float: left;
+    margin-left: 13px;
+}
+.brand-li-1{
+    float: left;
+}
+.brand-li img{
+    width: 485px;
+    height: 316px;
+}
+.brand-li-1 img{
+    width: 234px;
+    height: 316px;
+}
+.brand-header{
+    width: 485px;
+    height: 55px;
+    color: #999;
+    background: #fff;
+}
+.brand-header-1{
+    width: 234px;
+    height: 55px;
+   
+    background: #fff;
+}
+.brand-ch,.brand-en{
+    font-size:18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 55px;
+}
+.brand-en{
+    font-size:14px;
+    margin-left: 10px;
+}
+.brand-head-more{
+    float: right;
+    background: url(../images/more.png) no-repeat right center;
+    background-size: 18px 18px;
+    width: 56px;
+    height: 55px;
+    margin-right:8px;
+    line-height: 55px;
+    color: #333;
+}
+.brand-add{
+    width: 10px;
+    margin-left: 10px;
+}
+
+

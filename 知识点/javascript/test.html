@@ -126,7 +126,7 @@
         //     for (j = 1; j <= 6 - i; j++) {
         //         document.write("&nbsp");
         //         } 
-        //         for (k = 1; k <=i; k++) {
+        //      for (k = 1; k <=i; k++) {
         //             document.write("*&nbsp");
 
         //     }
@@ -244,7 +244,7 @@
         //     window.alert("输入有误！");
         // }
         // function fun(a){
-        //     document.write(a+"的平方为: "+Math.pow(a,2)+"   平方根为："+Math.sqrt(a)+"    自然对数为："+Math.log(a));
+        //     document.write(a+"的平方为: "+Math.pow(a,2)+"   平方根为："+Math.sqrt(a)+"    自然对数为："+Math.log(a))9s;
         // }
         // fun(inner);
         
@@ -257,8 +257,20 @@
             
         // }
         // fan();
+            
+        function CollectDigits(str){
+            var arr = str.split("");
+            document.write(arr);
+           for(var  i = 0;i<arr.length; i++){
+            if(isNaN(arr[i])){
+                delete arr[i]; 
+            }
+            
+           }
+           document.write(arr);
+        }
 
-        
+        CollectDigits("58aasdff");
 
 
 

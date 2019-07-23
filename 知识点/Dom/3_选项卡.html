@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+#contir{
+       margin-left: 100px;
+       margin-top: 100px;
+}
+#ul{
+    list-style: none;
+    overflow: hidden;
+        }
+#contir #ul li{
+    float: left;
+    height:30px;
+    width:50px;
+    border: 1px solid #898989;
+    background: #f1f1f1;
+    border-bottom: 0;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+#contir #ul li.actice{
+    background: #6D84B4;
+    color: #fff;
+}
+
+#conter{
+    width: 300px;
+    height: 100px;
+    border: 1px solid #898989;
+}
+#conter div{
+    display: none;
+}
+#conter .select{
+    display: block;
+}
+
+
+
+</style>
+
+</head>
+<body>
+     <div id="contir">
+         <ul id="ul">
+             <li class="actice">时事</li>
+             <li>体育</li>
+             <li>娱乐</li>
+         </ul>
+
+         <div id="conter">
+             <div class="select">时事</div>
+             <div>体育</div>
+             <div>娱乐</div>
+         </div>
+     </div>
+
+     <script>
+      var all =0; 
+      var aLi = document.getElementsByTagName('li');
+      var  odiv = document.getElementById("conter");
+      var  adiv = odiv.getElementsByTagName("div");
+       
+         
+          for(var i=0; i<aLi.length; i++ ){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){    
+                    //aLi[i].style.background = "#6d8484";   此时 i 为3 超出arr的数组长度 , arr[3]为undefined  
+                    //this
+                    for(var i=0;i<aLi.length;i++){ 
+                        aLi[i].className = "";  
+                        adiv[i].className= "";
+                    } 
+                    this.className ="actice";      
+                    adiv[this.index].className="select";
+                    
+            }
+           
+        }
+            
+            
+    
+     
+     </script>
+</body>
+</html>

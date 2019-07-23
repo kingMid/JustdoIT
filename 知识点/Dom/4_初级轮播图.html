@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #head {
+            margin-left: 200px;
+            margin-top: 150px;
+            position: relative;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #content div {
+            display: none;
+        }
+
+        #content .select {
+
+            height: 300px;
+            display: block;
+        }
+
+        .select img {
+            width: 700px;
+            height: 280px
+        }
+
+        .list li {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 8px;
+            float: left;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .list .list-select {
+            background: #ff0036;
+        }
+
+        .list {
+            width: 700px;
+            height: 30px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .list #left {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .list #right {
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="head">
+        <div class="list">
+            <ul id="left">
+                <li>
+                    <</span> </li> <li> ></span>
+                </li>
+            </ul>
+            <ul id="right">
+                <li class="list-select">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div class="select">
+                <a href="#">
+                    <img src="../../../fellows36/DOM/img/1.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../../../fellows36/DOM/img/2.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../../../fellows36/DOM/img/3.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../../../fellows36/DOM/img/4.jpg" alt="">
+                </a>
+            </div>
+            <div> <a href="#">
+                    <img src="../../../fellows36/DOM/img/5.jpg" alt="">
+                </a></div>
+        </div>
+    </div>
+
+    <script>
+        var oUl = document.getElementById("right");
+        var aLi = oUl.getElementsByTagName("li");
+
+        var oDiv = document.getElementById("content");
+        var aDiv = oDiv.getElementsByTagName("div");
+
+        var oRr = document.getElementById("left");
+        var aRr = oRr.getElementsByTagName("li");
+        aRr[0].index = 0; aRr[1].index = 1;
+        aRr[0].sum = 0;
+        for (var j = 0; j < aRr.length; j++) {
+            aRr[j].onclick = function () {
+                if (this.index == 1) {
+                    aRr[0].sum++;
+                    if (aRr[0].sum == 5) {
+                        aRr[0].sum = 0
+                    }
+                   
+                }
+                else if (this.index == 0) {
+                    aRr[0].sum--;
+                    if (aRr[0].sum == -1) {
+                        aRr[0].sum = 4
+                       
+                    }
+
+                } 
+                console.log( aRr[0].sum);
+                for (var i = 0; i < aLi.length; i++) {
+                         aLi[i].className = "";
+                        aDiv[i].className = "";
+                    }
+                    aLi[aRr[0].sum].className = "list-select";
+                    aDiv[aRr[0].sum].className = "select";
+            }
+           
+        }
+            
+
+            for (var i = 0; i < aLi.length; i++) {
+
+                aLi[i].index = i;
+                aLi[i].onclick = function () {
+                    for (var i = 0; i < aLi.length; i++) {
+                        aLi[i].className = "";
+                        aDiv[i].className = "";
+                    }
+                    this.className = "list-select";
+                    aDiv[this.index].className = "select";
+                }
+
+            }
+        // // aDiv[this.inedex]
+
+
+    </script>
+</body>
+
+</html>

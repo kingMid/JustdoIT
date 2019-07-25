@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -15,26 +15,27 @@
         #head {
             margin-left: 200px;
             margin-top: 150px;
+            width: 700px;
+            height: 280px;
             position: relative;
+            overflow: hidden;
         }
 
         li {
             list-style: none;
         }
-
-        #content div {
-            display: none;
+        #conter{
+            width: 4200px;
+            height: 280px;
+            position: absolute;
+            left: 0;
+           
         }
 
-        #content .select {
-
-            height: 300px;
-            display: block;
-        }
-
-        .select img {
+        #conter img{
             width: 700px;
-            height: 280px
+            height: 280px;
+            float: left;
         }
 
         .list li {
@@ -49,6 +50,7 @@
             float: left;
             border-radius: 5px;
             cursor: pointer;
+           
         }
 
         .list .list-select {
@@ -61,6 +63,7 @@
             overflow: hidden;
             position: absolute;
             bottom: 30px;
+            z-index: 1;
         }
 
         .list #left {
@@ -80,8 +83,8 @@
     <div id="head">
         <div class="list">
             <ul id="left">
-                <li>
-                    <</span> </li> <li> ></span>
+                <li id="Dome"><</span> 
+                </li> <li id="Up"> ></span>
                 </li>
             </ul>
             <ul id="right">
@@ -93,8 +96,8 @@
             </ul>
         </div>
 
-        <div id="content">
-            <div class="select">
+        <div id="conter">
+            <div class="">
                 <a href="#">
                     <img src="../../../fellows36/DOM/img/1.jpg" alt="">
                 </a>
@@ -117,66 +120,76 @@
             <div> <a href="#">
                     <img src="../../../fellows36/DOM/img/5.jpg" alt="">
                 </a></div>
+            <div class="">
+                <a href="#">
+                        <img src="../../../fellows36/DOM/img/1.jpg" alt="">
+                 </a>
+            </div>
         </div>
     </div>
-
+    <script src="jslib.js"></script>
     <script>
         var oUl = document.getElementById("right");
-        var aLi = oUl.getElementsByTagName("li");
-
-        var oDiv = document.getElementById("content");
+        var aBtn = oUl.getElementsByTagName("li");
+ 
+        var oDiv = document.getElementById("conter");
         var aDiv = oDiv.getElementsByTagName("div");
 
-        var oRr = document.getElementById("left");
-        var aRr = oRr.getElementsByTagName("li");
-
-        function clear(){
-
-            for (var i = 0; i < aLi.length; i++) {
-                        aLi[i].className = "";
-                        aDiv[i].className = "";
-                    }
-        }
-        aRr[0].index = 0; aRr[1].index = 1;
-        var sum = 0;
-        for (var j = 0; j < aRr.length; j++) {
-            aRr[j].onclick = function () {
-                if (this.index == 1) {
-                    sum++;
-                    if (sum == aDiv.length) {
-                        sum = 0;
-                    }
-                   
-                }
-                else if (this.index == 0) {
-                    sum--;
-                    if (sum == -1) {
-                        sum = aDiv.length-1;
-                       
-                    }
-
-                } 
-                console.log( aRr[0].sum);
-                    clear();
-                    aLi[sum].className = "list-select";
-                    aDiv[sum].className = "select";
+        var oUp = document.getElementById("Up");
+        var oDome = document.getElementById("Dome");
+        var oHead =document.getElementById("head");
+        var sum =0;
+        
+        oUp.onclick = function(){
+            sum++;
+            if(sum == aDiv.length){
+                // 迅速切换到第一张图 
+                oDiv.style.left = "0px";
+                // 显示索引是1的图片
+                sum = 1;
             }
-           
+
+            change(sum);
         }
-            
-
-            for (var i = 0; i < aLi.length; i++) {
-
-                aLi[i].index = i;
-                aLi[i].onclick = function () {
-                    clear();
-                    this.className = "list-select";
-                    aDiv[this.index].className = "select";
-                    sum = this.index;
-                }
+        oDome.onclick = function(){
+            sum--;
+            if(sum == -1){
+                // 迅速切换到第最后张图 
+                oDiv.style.left = "-3500px";
+                // 显示索引是1的图片
+                sum = aDiv.length-2;
 
             }
-        // // aDiv[this.inedex]
+
+            change(sum);
+        }
+
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index=i;
+            aBtn[i].onclick = function(){
+                change(this.index);
+                sum =this.index;
+            }
+        }
+
+
+        function change(index){
+            for(var i=0; i<aBtn.length; i++){
+                aBtn[i].className = "";
+            }
+           aBtn[index==5?0:index].className = "list-select";
+
+          
+            animate(oDiv,{
+                left:- index *700
+            });
+        }
+
+
+
+       
+
+        
 
 
     </script>

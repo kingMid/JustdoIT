@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -26,7 +26,7 @@
             display: none;
         }
 
-        #content .select {
+        #content .select{
 
             height: 300px;
             display: block;
@@ -130,13 +130,7 @@
         var oRr = document.getElementById("left");
         var aRr = oRr.getElementsByTagName("li");
 
-        function clear(){
 
-            for (var i = 0; i < aLi.length; i++) {
-                        aLi[i].className = "";
-                        aDiv[i].className = "";
-                    }
-        }
         aRr[0].index = 0; aRr[1].index = 1;
         var sum = 0;
         for (var j = 0; j < aRr.length; j++) {
@@ -146,37 +140,39 @@
                     if (sum == aDiv.length) {
                         sum = 0;
                     }
-                   
                 }
                 else if (this.index == 0) {
                     sum--;
                     if (sum == -1) {
-                        sum = aDiv.length-1;
-                       
+                        sum = aDiv.length - 1;
+
                     }
-
-                } 
-                console.log( aRr[0].sum);
-                    clear();
-                    aLi[sum].className = "list-select";
-                    aDiv[sum].className = "select";
-            }
-           
-        }
-            
-
-            for (var i = 0; i < aLi.length; i++) {
-
-                aLi[i].index = i;
-                aLi[i].onclick = function () {
-                    clear();
-                    this.className = "list-select";
-                    aDiv[this.index].className = "select";
-                    sum = this.index;
                 }
-
+                console.log(aRr[0].sum);
+                clear(sum);
             }
-        // // aDiv[this.inedex]
+        }
+
+        for (var i = 0; i < aLi.length; i++) {
+
+            aLi[i].index = i;
+            aLi[i].onclick = function () {
+                clear(this.index);
+                sum = this.index;
+            }
+
+        }
+
+        function clear(index) {
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].className = "";
+                aDiv[i].className = "";
+                aLi[index].className = "list-select";
+                aDiv[index].className = "select";
+            }
+        }
+    
+
 
 
     </script>

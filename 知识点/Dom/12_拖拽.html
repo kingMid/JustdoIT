@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+    body{
+         position: relative;
+        }
+    #box{
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    var  oBox =  document.getElementById("box");
+         oBox.onmousedown=function(e){
+        var xDis = e.clientX - oBox.offsetLeft;
+        var yDis = e.clientY - oBox.offsetTop;
+
+        document.onmousemove =function(e){
+
+        oBox.style.left= e.clientX-xDis + "px";
+        oBox.style.top = e.clientY-yDis + "px";
+
+        if(oBox.offsetLeft<0){
+            oBox.style.left = 0;
+        }
+        if(oBox.offsetTop<0){
+            oBox.style.top = 0;
+        }
+
+        var xMax = document.documentElement.clientWidth - oBox.offsetWidth;
+        var yMax = document.documentElement.clientHeight - oBox.offsetHeight;
+
+        if(oBox.offsetLeft>xMax){
+            oBox.style.left=xMax+"px";
+        }
+
+        if(oBox.offsetTopS>yMax){
+            oBox.style.top=yMax+"px";
+        }
+
+
+        oBox.onmouseup =function(e){
+            document.onmousemove=null;
+        }
+        }
+        
+    }
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+
+    <script>
+        // 事件源(谁触发的事件点谁)  事件处理函数(function)  事件(点击 输入 滑入滑出等...) 
+        var oDiv = document.getElementById('div1');
+
+        oDiv.onclick = function(){
+            alert(111);
+        }
+        //e指的是事件  document.onkeyup（文档中键盘抬起事件）
+        document.onkeyup = function(e){
+            // console.log('111')
+            // console.log(e.keyCode);
+            if(e.keyCode == 13){
+                console.log('0000');
+            }else{
+                console.log(e.keyCode);
+            }
+        }
+
+        document.onclick = function(e){
+            console.log(e.clientX,e.clientY);
+        }
+
+
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="btn">baidu</a>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(e){
+            // 获取事件的兼容性写法  e 标准浏览器  window.event ie浏览器
+            e = e || window.event;  
+            console.log('hahah');
+            // 阻止默认行为 
+            e.preventDefault();  //标准浏览器 preventDefault()方法
+            e.returnValue = false;  //ie浏览器 returnValue 属性
+            return false;
+        }
+
+
+        
+
+    </script>
+
+    
+</body>
+</html>

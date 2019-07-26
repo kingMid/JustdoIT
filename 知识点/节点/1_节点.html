@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid yellow;
+        }
+        .box li{
+            display: block;
+            width: 150px;
+            
+        }
+        #div1,#div2{
+            background: red;
+            width: 150px;
+            height: 36px;
+            color: #fff;
+            line-height: 36px;
+        }
+
+        #div2 {
+            background: blue;
+        }
+    </style>
 </head>
+
 <body>
-    <div id="div1">
+    <div class="box">
+        <div id="div1">管理区</div>
+            <ul>
+                <li>11111</li>
+                <li>222222</li>
+                <li>3333333</li>
+            </ul>
+        
+    </div>
+
+    <div class="box">
+        <div id="div2">交流区</div>
+            <ul>
+                <li>11111</li>
+                <li>222222</li>
+                <li>3333333</li>
+            </ul>
         
     </div>
 
 
 
 </body>
+
 </html>

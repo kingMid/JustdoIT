@@ -7,31 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .box{
-            border: 1px solid yellow;
+        *{
+            margin: 0;
+            padding: 0;
         }
-        .box li{
-            display: block;
-            width: 150px;
-            
+        .box ul{
+            list-style: none;
+            display: none;
         }
-        #div1,#div2{
-            background: red;
-            width: 150px;
-            height: 36px;
+        .box h2{
+            width: 200px;
+            background-color:black;
             color: #fff;
-            line-height: 36px;
+            font-size: 24px;
+        }
+        .box{
+            width: 200px;
+
+            border: 1px solid black;
+            border-top: 0;        
         }
 
-        #div2 {
-            background: blue;
-        }
+    
     </style>
 </head>
 
 <body>
     <div class="box">
-        <div id="div1">管理区</div>
+            <h2>管理区</h2>
             <ul>
                 <li>11111</li>
                 <li>222222</li>
@@ -41,7 +44,7 @@
     </div>
 
     <div class="box">
-        <div id="div2">交流区</div>
+            <h2>交流区</h2>
             <ul>
                 <li>11111</li>
                 <li>222222</li>
@@ -49,6 +52,22 @@
             </ul>
         
     </div>
+
+
+    <script>
+    var aH2 = document.getElementsByTagName("h2");
+    next(aH2)
+    
+    function next(elem) {
+            do {
+                elem = elem.nextSibling;
+            } while (elem && elem.nodeType != 1) //如果找到下一个兄弟节点 并且下一个兄弟的不是元素节点 接着循环    null(无效值)
+            return elem;
+        }
+    
+    
+    
+    </script>
 
 
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+    img{
+        position: absolute;
+    }
+
+</style>
+<body>
+    
+    <!-- 
+        // 叶子 
+            属性：  大小  位置  图片  速度
+            
+            方法：  初始化  下落 
+
+
+     -->
+
+     <script>
+         //兼容写法  获取当前可视区域的宽度
+         var screenWith = document.documentElement.clientWidth || document.body.clientWidth;
+         var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //  定义一个叶子类
+     function leaves (){
+            this.width = Math.random()*50+100;
+            this.pos = {
+                left:Math.random()*(screenWith-this.width),
+                top:0
+            }
+            this.span = 5;
+            var oImg = new Image();
+            oImg.src ="img/"+( Math.floor(Math.random()*4) +1 )+".png";
+            oImg.style.width = this.width+"px";
+            oImg.style.left = this.pos.left +"px";
+            oImg.style.top  = this.pos.top +"px"; 
+            this.img = oImg;
+
+        }
+        leaves.prototype.init = function(){//插入页面
+            document.body.appendChild(this.img);
+
+        }
+        leaves.prototype.fall = function(){
+            var  that =this;
+            setTimeout(function(){ 
+            this.time =setInterval(function(){
+                if(that.img.offsetTop>=screenHeight-that.img.offsetHeight){
+                   clearInterval(that.time);
+                }
+                else{
+                    that.img.style.top = that.img.offsetTop + that.span+"px";
+                }
+            },10)
+            },Math.random()*500);
+        }
+       
+        // var p1 = new leaves();
+        // p1.init();
+        // document.onclick = function(){
+        //     p1.fall();
+        // }
+        var arr = [];
+        for(var i=0; i<5; i++){
+            var leaf = new leaves();
+            arr.push(leaf);
+            leaf.init();
+        }
+
+        document.onclick = function(){
+            for(var j=0; j<arr.length; j++){
+                arr[j].fall();
+            }
+        }
+
+       
+
+     </script>
+</body>
+</html>

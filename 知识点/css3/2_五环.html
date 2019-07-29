@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1#0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .div{
+        border:10px solid blue;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+    }
+    .div::after{
+            content:"";
+            width: 100px;
+            height: 100px;
+            border:10px solid pink;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            left:-10px;
+            top:-10px;
+            z-index: 1;
+    }
+
+    .blue{
+      border-color: blue;
+      left: 0;
+      top: 0;
+    }
+    .blue::after{
+        border-color: blue;
+    }
+    .black{
+        border-color:  black;
+        left:130px;
+        top: 0;
+    }
+    .black::after{
+        border-color: black;
+        border-left-color: transparent;
+    }
+    .red{
+        border-color:  red;
+        left: 260px;
+        top: 0;
+    }
+
+    .red::after{
+        border-color: red;
+        border-left-color: transparent;
+    }
+  
+    .yellow{
+        border-color: yellow;
+        left:65px;
+        top:55px
+       
+    }
+    .yellow::after{
+        border-color: yellow;
+        border-top-color: transparent;
+        border-right-color: transparent;
+    }
+    .green{
+        border-color: green;
+        left:195px;
+        top:55px;
+    }
+
+    .green::after{
+        border-color: green;
+        border-top-color: transparent;
+        border-right-color: transparent;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="div blue"></div>
+    <div class="div black"></div>
+    <div class="div red"></div>
+    <div class="div yellow"></div>
+    <div class ="div green"></div>
+</body>
+</html>

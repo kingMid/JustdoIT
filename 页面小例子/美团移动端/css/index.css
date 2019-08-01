@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 16px;
+}
+.header{ 
+    background: #06c1ae;
+    display: flex;
+}
+.nav-add{
+    width:1.67rem;
+    height:1.01rem;
+    line-height: 1.01rem;
+    text-align: center;
+    color:#fff;
+    font-size: .32rem;
+}
+.nav-mine{
+    width:0.94rem;
+    height:1.01rem;
+    line-height: 1.3rem;
+    text-align: center;
+    color:#fff;
+    position: relative;
+}
+.nav-search{
+    flex:1;
+    height:0.64rem;
+    background: #00a494;
+    border-radius: .1rem;
+    color:#68dbce;
+    margin-top:0.2rem;
+    text-align: left;
+    line-height: 0.64rem;
+
+}
+.nav-search .text{
+    color: #68dbce;
+    margin-left: .2rem;
+    font-size: .25rem;
+  
+}
+.nav-search a{
+    text-decoration: none;
+}
+
+
+.nav-mine .icon-mine{
+    position: absolute;
+    top: -0.3rem;
+    left:.22rem;
+    font-size: .5rem;
+}
+.nav-mine .mine-text{
+font-size: .25rem;
+}
+
+.img-box{
+    width:7.5rem;
+    height:2.2rem;
+    background: url('../images/banner.png') no-repeat;
+    background-size:7.5rem  2.2rem;
+}
+.list-tatel{
+display: flex;
+flex-wrap: wrap;
+}
+.list-logo{
+    display: block;
+    width:20%;
+    height: 1.6rem;
+}
+.list-logo a{
+    display: block;
+    height: 1.6rem;
+    padding:.2rem; 
+    text-align: center;
+}
+.list-logo .icon-box{
+    display: block;
+    margin: 0 auto;
+    width: .8rem;
+    height: .8rem;
+    border-radius:50%;
+    text-align: center;
+    line-height: .8rem;
+    font-size: .5rem;
+    color: #fff;
+    background: red;
+}
+.icon-font{
+    font-size: .25rem;
+}
+.list-logo .iconfont{
+    font-size: .5rem;
+}
+.pro-list-box{
+    padding-left: .2rem;
+    margin-top: .2rem;
+    background: #fff;
+}
+
+.pro-list-box h2{
+    height: 0.84rem;
+    line-height: 0.84rem;
+    font-size: .34rem;
+    color: #333;
+    font-weight: normal;
+    border-bottom:1px solid #DDD8CE;
+}
+.pro-list{
+    padding:0.2rem 0;
+    display: flex;
+}
+.pro-list-img{
+    width:1.8rem;
+    height: 1.8rem;
+    margin-right:0.2rem;
+}
+.pro-list-info{ 
+    flex:1;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000000;
+            perspective: 800px;
+        }
+
+        #container {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            /* background: #ff0000; */
+            /* border: 1px dotted #fff; */
+            position: relative;
+            transform-style: preserve-3d;
+            /* transform: rotateY(-45deg); */
+            animation: run 3s linear infinite ;
+        }
+        @keyframes run {
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+
+        #container div {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border: 5px solid gold;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            color: #fff;
+            left: 0px;
+            top: 0px;
+        }
+
+        #container .one {
+            transform: rotateY(-90deg) translateZ(100px);
+            background: rgba(145, 94, 94, 0.5);
+        }
+
+        #container .two {
+            transform: rotateY(90deg) translateZ(100px);
+            background: rgba(60, 68, 139, 0.5);
+        }
+
+        #container .three {
+
+            transform: rotateX(90deg) translateZ(100px);
+            background: rgba(167, 34, 51, 0.5);
+
+        }
+
+        #container  .four {
+            transform: rotateX(-90deg) translateZ(100px);
+            background: rgba(26, 83, 158, 0.5);
+        }
+
+        #container .five {
+            transform: rotateY(180deg) translateZ(100px);
+            background: rgba(86, 30, 177, 0.5);
+        }
+
+        #container .six {
+            transform: translateZ(100px);
+            background: rgba(182, 23, 147, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+    
+</body>
+
+</html>

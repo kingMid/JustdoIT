@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            html,body{
+               height: 100%;
+            }
+            #container{
+                background: url(img/bg.jpg) 0 0 repeat ;
+                position: relative;
+                height: 100%;
+            }
+            .box{
+                width: 125px;
+                height: 125px;
+                border:5px solid #fff;
+                position: absolute;
+                left:-135px;
+                top:-135px;
+                transition: all 2s ease ;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="container">
+        
+    </div>
+    <script>
+        var oContainer = document.getElementById('container');
+        var count = 0;
+        //获取小图
+        for (var i = 0; i < 24; i++) {
+            var oImg = new Image();
+            oImg.onload = function () {
+                count++;
+                if (count == 48) {
+                    loadSuccess();
+                }
+            }
+            oImg.src = "img/thumbs/" + (i + 1) + ".jpg";
+        }
+        //获取大图
+        for (var i = 0; i < 24; i++) {
+            var oImg = new Image();
+            oImg.onload = function () {
+                count++;
+                if (count == 48) {
+                    loadSuccess();
+                }
+            }
+            oImg.src = "img/" + (i + 1) + ".jpg";
+        }
+
+        function loadSuccess() {
+            //1. 生成24个 div 插入到页面左上角
+            for (var i = 0; i < 4; i++) { //行 数
+                for (var j = 0; j < 6; j++) { //列数
+                    var oDiv = document.createElement('div');
+                    oDiv.style.background = "url(img/thumbs/" + (i*6+j+1) + ".jpg)";
+                    oDiv.n=i;
+                    oDiv.m=j;
+                    oDiv.className = "box";
+                    oContainer.appendChild(oDiv);
+                }
+            }
+
+            //2.改变.box的位置 
+            var aBox = document.getElementsByClassName("box");
+            //获取box的宽高
+            var oBoxWidth = aBox[0].offsetWidth;
+            var oBoxHeight = aBox[0].offsetHeight;
+            //box水平间距
+            var disX = (container.offsetWidth-6*oBoxWidth)/7;
+             //box垂直间距
+            var disY = (container.offsetHeight-4*oBoxHeight)/5;
+
+            for(var i=0;i<aBox.length;i++){
+                // aBox[i].style.transitionDelay = (aBox.length-i)*100+"ms";
+                // aBox[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
+                aBox[i].style.transitionDelay = (aBox.length-i)*100+"ms";
+                aBox[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
+
+                aBox[i].style.left = ((aBox[i].m+1)*disX + aBox[i].m*oBoxWidth)+"px";
+                aBox[i].style.top = ((aBox[i].n+1)*disY + aBox[i].n*oBoxHeight)+"px";
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

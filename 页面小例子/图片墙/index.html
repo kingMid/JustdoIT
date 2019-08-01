@@ -7,33 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-            *{
-                margin: 0;
-                padding: 0;
-            }
-            html,body{
-               height: 100%;
-            }
-            #container{
-                background: url(img/bg.jpg) 0 0 repeat ;
-                position: relative;
-                height: 100%;
-            }
-            .box{
-                width: 125px;
-                height: 125px;
-                border:5px solid #fff;
-                position: absolute;
-                left:-135px;
-                top:-135px;
-                transition: all 2s ease ;
-            }
-        </style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #container {
+            background: url(img/bg.jpg) 0 0 repeat;
+            position: relative;
+            height: 100%;
+        }
+
+        .box {
+            width: 125px;
+            height: 125px;
+            border: 5px solid #fff;
+            position: absolute;
+            left: -135px;
+            top: -135px;
+            transition: all 2s ease;
+        }
+
+        .box span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: url(img/1.jpg) 0 0 no-repeat;
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="container">
-        
+
     </div>
     <script>
         var oContainer = document.getElementById('container');
@@ -63,13 +77,18 @@
 
         function loadSuccess() {
             //1. 生成24个 div 插入到页面左上角
+            var idx = 0;
             for (var i = 0; i < 4; i++) { //行 数
                 for (var j = 0; j < 6; j++) { //列数
                     var oDiv = document.createElement('div');
-                    oDiv.style.background = "url(img/thumbs/" + (i*6+j+1) + ".jpg)";
-                    oDiv.n=i;
-                    oDiv.m=j;
+                    oDiv.style.background = "url(img/thumbs/" + (i * 6 + j + 1) + ".jpg)";
+                    oDiv.n = i;
+                    oDiv.m = j;
+                    oDiv.index = idx;
+                    idx++;
+                    oDiv.innerHTML = "<span></span>"
                     oDiv.className = "box";
+                    oDiv.onclick = fn;
                     oContainer.appendChild(oDiv);
                 }
             }
@@ -80,20 +99,52 @@
             var oBoxWidth = aBox[0].offsetWidth;
             var oBoxHeight = aBox[0].offsetHeight;
             //box水平间距
-            var disX = (container.offsetWidth-6*oBoxWidth)/7;
-             //box垂直间距
-            var disY = (container.offsetHeight-4*oBoxHeight)/5;
+            var disX = (oContainer.offsetWidth - 6 * oBoxWidth) / 7;
+            //box垂直间距
+            var disY = (oContainer.offsetHeight - 4 * oBoxHeight) / 5;
 
-            for(var i=0;i<aBox.length;i++){
+            for (var i = 0; i < aBox.length; i++) {
                 // aBox[i].style.transitionDelay = (aBox.length-i)*100+"ms";
                 // aBox[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
-                aBox[i].style.transitionDelay = (aBox.length-i)*100+"ms";
-                aBox[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
+                aBox[i].style.transitionDelay = (aBox.length - i) * 100 + "ms";
+                aBox[i].style.transform = "rotate(" + (Math.random() * 40 - 20) + "deg)";
 
-                aBox[i].style.left = ((aBox[i].m+1)*disX + aBox[i].m*oBoxWidth)+"px";
-                aBox[i].style.top = ((aBox[i].n+1)*disY + aBox[i].n*oBoxHeight)+"px";
+                aBox[i].style.left = ((aBox[i].m + 1) * disX + aBox[i].m * oBoxWidth) + "px";
+                aBox[i].style.top = ((aBox[i].n + 1) * disY + aBox[i].n * oBoxHeight) + "px";
             }
-            
+            var bigDisX = (oContainer.offsetWidth - 6 * 127) / 2;
+            var bigDisY = (oContainer.offsetHeight - 4 * 127) / 2;
+            var flag = true;
+            function fn() {
+
+                if (flag) {
+                    for (var i = 0; i < aBox.length; i++) {
+                        aBox[i].style.transitionDelay = "0ms";
+                        aBox[i].style.left = aBox[i].m * 127 + bigDisX + "px";
+                        aBox[i].style.top = aBox[i].n * 127 + bigDisY + "px";
+                        aBox[i].style.transform = "rotate(0deg)";
+                        aBox[i].style.borderWidth = "1px";
+
+                        var oSpan = aBox[i].getElementsByTagName("span")[0];
+                        oSpan.style.opacity = 1;
+                        var x = - aBox[i].m * 125;
+                        var y = -aBox[i].n * 125;
+                        oSpan.style.background = "url(img/" + (this.index + 1) + ".jpg) " + x + "px " + y + "px no-repeat";
+                    }
+                } else {
+
+
+                    for (var i = 0; i < aBox.length; i++) {
+                      
+                    }
+                }
+                flag=!flag;
+            }
+
+
+
+
+
         }
 
     </script>

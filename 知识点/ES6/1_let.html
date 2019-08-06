@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        let 和 var 区别
+        1.let没有变量提升
+        2.let不能重复命名
+        3.块级作用域{  }
+        4.临时失效区 （暂时性死区） 当前作用域不允许同名的变量进来
+     -->
+    <script>
+        // 1.变量提升 (当前作用域的上边 定义了 没有赋值 ，值为undefined)
+        // console.log(a);  //undefined
+        // var a = 10;
+        // console.log(b);
+        // let b = 10;
+
+        // 2let不能重复命名
+        // var c = 10;
+        // var c = 20;
+        // console.log(c);// var可以重复命名但是后面的会覆盖前面的
+
+        // let c = 10;
+        // let c = 20;
+        // console.log(c);
+
+        // 3.块级作用域
+        // var m = 5;
+
+        // if(m){
+        //     var n = 100;
+        // }
+
+        // console.log(n);
+        
+        // 块级作用域{  }
+        // var m = 5;
+        // if(m){
+        //     let n = 100;
+        // }
+        // console.log(n);
+
+
+        // 函数中x会在当前作用域 变量提升 ，值为undefined
+        // var x = 10;
+        // function a(){
+        //     console.log(x); //undefined
+        //     var x = 20;
+        // }
+        // a();
+
+        var x = 10;
+        function a(){
+            // console.log(x);
+            let x = 20;
+         
+        }
+        a();
+        
+
+    </script>
+    
+</body>
+</html>

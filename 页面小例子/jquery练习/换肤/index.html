@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            border:1px solid #eee;
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            width: 15px;
+            height: 15px;
+            background: #ff0000;
+            float: left;
+            margin-left:10px;
+            background: url(theme.gif) 0 0 no-repeat;
+        }
+        #skin_0{
+            background-position: 0 0;
+        }
+        
+        #skin_1{
+            background-position: -20px 0;
+        }
+        
+        #skin_2{
+            background-position: -40px 0;
+        }
+       
+        #skin_3{
+            background-position: -60px 0;
+        }
+        
+        #skin_4{
+            background-position: -80px 0;
+        }
+       
+        .new_skin_0{
+            background: #b1b1b1;
+        }
+        .new_skin_1{
+            background: #b4d61e;
+        }
+        .new_skin_2{
+            background: #faab1a;
+        }
+        .new_skin_3{
+            background: #08bece;
+        }
+        .new_skin_4{
+            background: #e44c79;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="skin_0" class="selected"></li>
+        <li id="skin_1" ></li>
+        <li id="skin_2"></li>
+        <li id="skin_3"></li>
+        <li id="skin_4"></li>
+    </ul>
+    <div class="new new_skin_0">时事新闻</div>
+    <div class="new new_skin_0">娱乐</div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('li').on('click',function(){
+            $(this).css("background-position-y","-15px").siblings().css("background-position-y","-15px");
+            var index = $(this).index();
+            $('.new').attr('class','new new_skin_'+index);
+        })
+    </script>
+
+    
+</body>
+</html>

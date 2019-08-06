@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 100%;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">haha</div>
+
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+
+    <script>
+        // click 300ms延迟  区分单机双击 
+        $('#div1').on('click',function(){
+            console.log(111);
+        });
+        $('#div1').on('tap',function(){
+            console.log('tap');
+        });
+        $('#div1').on('singleTap',function(){
+            console.log('singleTap');
+        });
+        $('#div1').on('doubleTap',function(){
+            console.log('doubleTap');
+        });
+
+        $('#div1').on('swipeLeft',function(){
+            console.log('left')
+        })
+
+        $('#div1').on('swipe',function(){
+            console.log('swipe')
+        })
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

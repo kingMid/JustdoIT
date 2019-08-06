@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            touch-action: none;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #container img {
+            width: 25%;
+            box-sizing: border-box;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        body {
+            background: #000;
+        }
+
+        #big {
+            position: absolute;
+            background: #000 url('img/1.jpg') center no-repeat;
+            background-size: contain;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="big"></div>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script>
+        var  NowIndex = 0;
+        //获取小图
+        for (var i = 0; i < 24; i++) {
+            $('<img src="img/thumbs/' + (i + 1) + '.jpg"/>').appendTo('#container');
+        }
+        $('#container img').on('click',function(){
+            $('#big').show();
+            $('#big').css("background-image","url(img/"+($(this).index()+1)+".jpg)")
+        })
+        $('#big').on('click',function(){
+            $(this).hide();
+        })
+
+        $('#big').on('swipeLeft',function(){
+            NowIndex++;
+            if(NowIndex==$('#container img').length){
+                NowIndex == 0
+            }
+            $('#big').css("background-image","url(img/"+(NowIndex+1)+".jpg)");
+        }).on('swipeRight',function(){
+            NowIndex--;
+            if(NowIndex==-1){
+                NowIndex=$('#container img').length-1;
+            }
+            $('#big').css("background-image","url(img/"+(NowIndex+1)+".jpg)");
+        })
+
+
+    </script>
+</body>
+
+</html>

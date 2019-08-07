@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+    <script>
+       //箭头函数 
+        //  var  b =(x,y) =>{
+        //      console.log(x,y);
+        //  }
+        //  b(5,5);
+
+
+ //箭头函数 this指向声明时的this（父作用域中的this）  普通函数中的this指向
+        // var aLi = document.getElementsByTagName('li');
+        // for (var i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = function () {
+        //         setTimeout(function() {
+        //             console.log(this);//this指向Window
+        //         }.bind(this), 1000)//.bin(this)改变this指向
+        //     }
+
+        // }
+
+        
+        // var aLi = document.getElementsByTagName('li');
+        // for (var i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = function () {
+        //         setTimeout(()=> {
+        //             console.log(this);//this指向父级this
+        //         }, 1000)
+        //     }
+
+        // }
+
+        // 2 箭头函数中不能使用arguments   可以使用...rest
+        var a =function(){
+            console.log(arguments);
+        }
+        a(1,2,3,4);
+
+
+        // var b =(...rest)=>{
+        //     console.log(...rest);
+        // }
+        // b(1,2,3,4);
+
+
+
+    </script>
+
+</body>
+
+</html>

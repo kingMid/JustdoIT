@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let name = "zs";
+        let age = 20;
+        // 属性名和变量同名时
+        // var obj = {
+        //     name:name,
+        //     age:age,
+        //     say:function(){
+        //         console.log('haha');
+        //     }
+        // }
+        //  简写：
+
+        var obj1 = {
+           name,
+           age,
+            say(){
+                console.log('hahah')
+            }
+        }
+        console.log(obj1);
+        obj1.say();
+
+
+        // var obj1 = {
+        //     name:'zs'
+        // }
+        // var obj2 = {
+        //     name:'lisi',
+        //     age:20
+        // }
+        // var obj3 = {...obj1,...obj2};
+        // // 合并对象
+        // Object.assign(obj1,obj2);
+        // console.log(obj1);
+        
+        // var obj4 = {
+        //     name:'xx',
+        //     age:10,
+        //     school:'1111'
+        // }
+        // // 循环 key属性   
+        // for(key in obj4){
+        //     // 输出对象中属性值
+        //     // console.log(key,obj4);
+        //     // 属性名是动态的 obj4[key];
+        //     console.log(obj4[key]);
+        //     obj4[key] = "haha";
+        // }
+        // console.log(obj4);
+        // // 是否包含name属性
+        // console.log('name' in obj4);
+
+        
+
+        
+        
+        
+    </script>
+
+    
+</body>
+</html>

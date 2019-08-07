@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age  = age;
+        }
+        Person.prototype.say = function(){
+            
+        }
+        
+        function Coder(name,age){
+            // Person.call(this,name,age);
+            // Person.bind(this,name,age)();
+            Person.apply(this,[name,age])
+        }
+        var  c1 = new Coder("iKun",20);
+        console.log(c1);
+    </script>
+</body>
+</html>

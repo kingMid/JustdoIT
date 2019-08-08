@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Person {
+        constructor(name,age){
+            this.name;
+            this.age;
+        }
+        say(){
+            console.log('ok you are good');
+        }
+        static play(){
+            console.log('boom boom boom!');
+        }
+    }
+
+    //cooder继承person
+    class  Coder extends Person{
+        constructor(name,age,close){
+            super(name,age);
+            this.close = close;
+
+        }
+        coding(){
+            console.log('Hello world~');
+        }
+    }
+
+    let c1 = new Coder('ikun',20,"T-sirte");
+    console.log(c1);
+    c1.say();
+    c1.coding();
+    Person.play();
+
+    
+    </script>
+</body>
+</html>

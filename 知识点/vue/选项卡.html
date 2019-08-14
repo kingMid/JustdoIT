@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #contenter {
+            overflow: hidden;
+            margin: 100px;
+        }
+
+        #contenter ul {
+            list-style: none;
+            height: 25px;
+            width: 200px;
+            margin: 0;
+            padding-left: 0;
+
+        }
+
+        #contenter li {
+            width: 50px;
+            height: 25px;
+            float: left;
+            line-height: 25px;
+            text-align: center;
+            background: #eee;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        #contenter div{
+            width: 200px;
+            height: 150px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenter">
+        <ul>
+            <li @click="change(1)">时事</li>
+            <li @click="change(2)">新闻</li>
+            <li @click="change(3)">娱乐</li>
+        </ul>
+
+        <div v-if="index==1">时事</div>
+        <div v-else-if="index==2">新闻</div>
+        <div v-else-if="index==3">娱乐</div>
+
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#contenter",
+            data: {
+                index: 1
+            },
+            methods: {
+                change(index) {
+                    this.index = index;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

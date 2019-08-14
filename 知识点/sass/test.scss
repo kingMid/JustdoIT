@@ -1,0 +1,12 @@
+$color:red;
+body{
+    background: $color;
+    color:green;
+    width:800px;
+    height:300px;
+    div{
+        color:$color;
+    }
+}
+
+

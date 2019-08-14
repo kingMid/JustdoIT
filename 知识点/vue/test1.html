@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docunment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        #app {
+            margin-left: 25%;
+            margin-top: 60px;
+            width: 600px;
+        }
+
+        .title {
+            width: 600px;
+            border-bottom: 2px solid #000;
+        }
+
+        .list-box {
+            width: 600px;
+        }
+
+        .list-box .list-li {
+            width: 600px;
+            height: 40px;
+            background: #eee;
+            line-height: 40px;
+            margin-bottom: 10px;
+            padding: 0 10px
+        }
+
+        .list-info-l {
+            float: left;
+        }
+
+        .list-info-r {
+            float: right;
+        }
+
+        .list-box .pink {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            <h2>TodoList</h2>
+        </div>
+        <label>名称：</label><input type="text" v-model="Mname">
+        <label>价格：</label><input type="text" v-model="Mmach">
+        <button @click="add()">添加</button>
+        <input type="text" v-model="servlue"><button @click="sever()">搜索</button>
+        <ul class="list-box">
+            <!-- ****(obj,index)             v-show="obj.isShow -->
+            <li class="list-li" v-for="(obj,index) in list" @click="change(obj)" :class="{pink:obj.isFT}" v-show="obj.isShow">
+                <span class="list-info-l">
+                    <input type="checkbox" v-model="obj.isFT"> {{obj.name}}
+                </span>
+
+                <span class="list-info-r">
+                    <span>{{obj.mach}}</span>
+                    <span @click.stop="del(index)">[x]</span>
+                </span>
+            </li>
+        </ul>
+        <button @click="delAll()">删除选中</button> <span>总价：{{total()}}</span>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+
+            data: {
+
+                list: [
+                    {
+                        name: '裤子',
+                        mach: 11,
+                        isFT: false,
+                        isShow:true
+                    }, {
+                        name: '衣服',
+                        mach: 25,
+                        isFT: false,
+                        isShow:true
+                    }, {
+                        name: 'iphone',
+                        mach: 8655,
+                        isFT: false,
+                        isShow:true
+                    }, {
+                        name: '抱枕',
+                        mach: 99,
+                        isFT: false,
+                        isShow:true
+                    }
+                ],
+                Mname: "",
+                Mmach: "",
+                servlue:""
+            },
+            methods: {
+                add() {
+                    if (this.Mname && this.Mmach) {
+                        if(!isNaN(this.Mmach*1)){
+                        this.list.push({ name: this.Mname, mach: this.Mmach * 1, isFT: false,isShow:true });
+                        this.Mmach = '';
+                        this.Mname = '';
+                        }
+                        else{
+                            window.alert("输入价格有误！")
+                        }
+                        
+                    }
+                    else{
+                        window.alert("请输入完整的信息！")
+                    }
+
+                },
+                change(obj) {
+                    obj.isFT = !obj.isFT;
+                },
+                total() {
+                    let sum = 0;
+                    this.list1.forEach(function (obj) {
+                        if (obj.isFT) {
+
+                            sum += obj.mach;
+                        }
+                    }
+                    )
+                    return sum;
+                },
+                del(index){
+                    this.list.splice(index,1);//***es6  splice
+                },
+                delAll(){
+                    let arr = this.list.filter(function(obj){//****es6  filter
+                        return !obj.isFT;
+                    })
+                    this.list = [...arr];
+                },
+                sever(){
+                    this.list.forEach((obj)=>{
+                        if(obj.name.includes(this.servlue)){//***********
+                            obj.isShow = true;
+                        }
+                        else{
+                            obj.isShow = false;
+                        }
+                    })
+                }
+
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>

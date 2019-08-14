@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        {{msg}}
+        {{num}}
+    </div>
+    <div id="loof">
+        <ul>
+            <li v-for="obj in NameIdList">{{obj.name}}|{{obj.age}}</li>
+        </ul>
+    </div>
+    <button id="btn" @click="chang('cs go')">{{msg}}</button>     //
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#box",//挂载元素
+            data: {
+                msg: 'this is my frist vue',
+                num: 10
+            }
+        })
+        let ver = new Vue({
+            el: "#loof",//挂载元素
+            data: {
+                NameIdList: [
+                    {
+                        name: 'zas',
+                        age: 18
+                    },
+                    {
+                        name: 'lisi',
+                        age: 20
+                    }
+                ]
+            }
+        })
+
+        let metd = new Vue({
+            el: "#btn",//挂载元素
+            data:{
+                msg:'this is a pig'
+            },
+           methods:{
+               chang(value){
+                   this.msg = value;
+               }
+           }
+        })
+
+    </script>
+</body>
+
+</html>

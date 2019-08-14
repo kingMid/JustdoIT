@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <p>{{msg}}</p>
+        <h3>爱好：</h3>
+        <input type="checkbox" v-model="hobby" value="篮球">篮球
+        <input type="checkbox" v-model="hobby" value="唱歌">唱歌
+        <input type="checkbox" v-model="hobby" value="跳舞">跳舞
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    let me =new Vue({
+        el:"#app",
+        data:{
+             msg:'你快乐吗？',
+             hobby:[]
+        }
+       
+    })
+    
+    </script>
+</body>
+</html>

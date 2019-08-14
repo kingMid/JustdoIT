@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dialog {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        .coslod {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="app">
+        <button @click="loginShow = true">登录</button>   <button @click="regShow=true">注册</button>
+        <my-component title="登录"  v-show="loginShow">
+            <label>用户名</label><input type="text"><br>
+            <label>密码：</label><input type="password"><br>
+            <button>登陆</button>
+        </my-component>
+       
+        <my-component title="注册" v-show="regShow"> 
+                <label>用户名</label><input type="text"><br>
+                <label>密码：</label><input type="password"><br>
+                <label>确定密码：</label><input type="password"><br>
+                <button>注册</button>
+            </my-component>
+    </div>
+
+    <template id="temp">
+        <div id="dialog">
+            <span>{{title}}</span>
+            <span class="coslod">x</span>
+            <hr>
+            <slot></slot>
+
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        // 局部組件
+        new Vue({
+            el: '#app',
+            data: {
+                loginShow:false,
+                regShow:false
+            },
+            components: {
+                "myComponent": {
+                    template: "#temp",
+                    props: ['title'],
+                    data() {
+                        return {
+
+                        }
+                    },
+                    methods: {
+
+                    }
+                }
+            },
+
+        }
+        )
+    </script>
+
+</body>
+
+</html>

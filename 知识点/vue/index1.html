@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <li v-show="flag">{{msg}}</li>
+        <li v-if="a==1">11</li>
+        <li v-else-if="a==2">22</li>
+        <li v-else-if="a==3">33</li>
+        <li v-else-if="a==4">44</li>
+        <li v-else>55</li>
+        <button @click ="fun()">666</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        let test = new Vue({
+            el:"#box",
+            data:{
+                 msg:'sdsdsadsad',
+                 flag:false,
+                 a:1
+            },
+            methods:{
+                fun(){
+                    this.flag =!this.flag;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

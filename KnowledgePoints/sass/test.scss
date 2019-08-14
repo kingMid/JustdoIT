@@ -6,6 +6,9 @@ body{
     height:300px;
     div{
         color:$color;
+        p{
+            width: 100px;
+        }
     }
 }
 

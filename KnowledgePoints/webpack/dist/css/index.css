@@ -1,0 +1,33 @@
+body {
+  background: pink; }
+.box{
+    width: 500px;
+    height: 500px;
+    background: url(../images/708375d8dd0d7c2687b43619bdea8fff.jpg) 0 0 no-repeat;
+    transform: rotate(30deg);
+    transition:height 2s ease ;
+    -webkit-animation: run 2s ease 3s;
+            animation: run 2s ease 3s;
+}
+@-webkit-keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+    }
+    100%{
+        width:300px;
+    }
+}
+@keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+    }
+    100%{
+        width:300px;
+    }
+}
